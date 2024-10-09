@@ -108,9 +108,12 @@
 
 // export default App;
 
+
+
+
 import React, { useState, useEffect } from "react";
 import {
-  HashRouter as Router,
+  HashRouter as Router, // Import HashRouter
   Route,
   Routes,
   Navigate,
@@ -181,10 +184,10 @@ function App() {
     setPlayers([]);
   };
 
-  const gameUrl = `${window.location.origin}/mobile/${gameId}`;
+  const gameUrl = `${window.location.origin}/#/mobile/${gameId}`; // Update URL to use hash
 
   return (
-    <Router>
+    <Router> {/* Use HashRouter instead of BrowserRouter */}
       <Routes>
         <Route path="/" element={<Navigate to="/desktop" />} />
         <Route
